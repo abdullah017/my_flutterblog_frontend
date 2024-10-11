@@ -50,7 +50,9 @@ dependencies:
   webview_flutter:
   url_launcher:
   flutter_linkify:
-
+  flutter_staggered_grid_view:
+  google_fonts:
+  intl: ^0.19.0
 
 dev_dependencies:
   flutter_test:

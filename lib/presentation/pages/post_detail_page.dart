@@ -51,10 +51,10 @@ class PostDetailPage extends StatelessWidget {
                     if (post.coverImage != null && post.coverImage!.isNotEmpty)
                       CachedNetworkImage(
                         imageUrl: post.coverImage!,
-                        placeholder: (context, url) => Container(
+                        placeholder: (context, url) => const SizedBox(
                           height: 250,
                           child:
-                              const Center(child: CircularProgressIndicator()),
+                              Center(child: CircularProgressIndicator()),
                         ),
                         errorWidget: (context, url, error) => Container(
                           height: 250,
