@@ -1,10 +1,10 @@
 // lib/presentation/pages/home_page.dart
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
 import 'package:my_blogapp_frontend/presentation/controllers/post_controller.dart';
 import 'package:my_blogapp_frontend/presentation/widgets/post_card.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class HomePage extends StatelessWidget {
   final PostController controller = Get.find<PostController>();
@@ -16,59 +16,83 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Blog Uygulaması',
-          style: GoogleFonts.lora(
+          'Blog Admin Panel',
+          style: GoogleFonts.inter(
             textStyle: const TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
             ),
           ),
         ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: const FlutterLogo(),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.breakfast_dining_rounded),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.breakfast_dining_rounded),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.breakfast_dining_rounded),
+          )
+        ],
         centerTitle: true,
-        elevation: 4,
       ),
-      body: Column(
-        children: [
-          // Hoş Geldiniz Yazısı
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              'Hoş Geldiniz!',
-              style: GoogleFonts.lora(
-                textStyle: const TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
+      body: CustomScrollView(
+        slivers: [
+          // Başlık Bölümü
+          SliverPadding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 50.0, vertical: 20.0),
+            sliver: SliverToBoxAdapter(
+              child: Text(
+                'Blog',
+                style: GoogleFonts.inter(
+                  textStyle: const TextStyle(
+                    fontSize: 60,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
+                textAlign: TextAlign.left,
               ),
-              textAlign: TextAlign.center,
             ),
           ),
           // Yazı Listesi
-          Expanded(
-            child: Obx(() {
+          SliverPadding(
+            padding: const EdgeInsets.symmetric(horizontal: 50.0),
+            sliver: Obx(() {
               if (controller.isLoading.value) {
-                return const Center(child: CircularProgressIndicator());
+                return const SliverToBoxAdapter(
+                  child: Center(child: CircularProgressIndicator()),
+                );
               }
 
               if (controller.posts.isEmpty) {
-                return const Center(child: Text('Hiç yazı bulunamadı.'));
+                return const SliverToBoxAdapter(
+                  child: Center(child: Text('Hiç yazı bulunamadı.')),
+                );
               }
 
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: StaggeredGrid.count(
-                  crossAxisCount: 4,
-                  mainAxisSpacing: 16,
-                  crossAxisSpacing: 16,
-                  children: controller.posts.map((post) {
-                    return StaggeredGridTile.fit(
-                      crossAxisCellCount: 2,
-                      child: PostCard(post: post),
-                    );
-                  }).toList(),
-                ),
+              return SliverStaggeredGrid.countBuilder(
+                crossAxisCount: 4,
+                mainAxisSpacing: 20, // Daha makul spacing
+                crossAxisSpacing: 20, // Daha makul spacing
+                itemCount: controller.posts.length,
+                itemBuilder: (context, index) {
+                  return PostCard(post: controller.posts[index]);
+                },
+                staggeredTileBuilder: (index) => const StaggeredTile.fit(2),
               );
             }),
+          ),
+          // Alt Boşluk
+          const SliverToBoxAdapter(
+            child: SizedBox(height: 50),
           ),
         ],
       ),

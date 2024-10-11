@@ -30,6 +30,7 @@ class _PostCardState extends State<PostCard> {
   @override
   Widget build(BuildContext context) {
     final DateFormat formatter = DateFormat('dd MMM yyyy');
+    print('PostCard: coverImage URL -> ${widget.post.coverImage}');
 
     return GestureDetector(
       onTap: () {
@@ -52,7 +53,7 @@ class _PostCardState extends State<PostCard> {
             boxShadow: isHovered
                 ? [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
+                      color: Colors.grey.withOpacity(0.2),
                       blurRadius: 8,
                       offset: const Offset(0, 4),
                     ),
@@ -61,10 +62,11 @@ class _PostCardState extends State<PostCard> {
             borderRadius: BorderRadius.circular(15),
           ),
           child: Card(
+            color: Colors.transparent,
             elevation: 0,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            margin: EdgeInsets.zero,
+            //margin: EdgeInsets.zero,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -73,11 +75,11 @@ class _PostCardState extends State<PostCard> {
                     widget.post.coverImage!.isNotEmpty)
                   ClipRRect(
                     borderRadius:
-                        const BorderRadius.vertical(top: Radius.circular(15)),
+                        const BorderRadius.vertical(top: Radius.circular(30)),
                     child: CachedNetworkImage(
                       imageUrl: widget.post.coverImage!,
                       placeholder: (context, url) => Container(
-                        height: 150,
+                        height: 300,
                         color: Colors.grey[300],
                         child: const Center(child: CircularProgressIndicator()),
                       ),
@@ -87,7 +89,7 @@ class _PostCardState extends State<PostCard> {
                         child: const Icon(Icons.broken_image,
                             size: 50, color: Colors.grey),
                       ),
-                      height: 150,
+                      height: 300,
                       width: double.infinity,
                       fit: BoxFit.cover,
                     ),
