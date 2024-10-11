@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
       client: ValueNotifier(client),
       child: CacheProvider(
         child: GetMaterialApp(
+          debugShowCheckedModeBanner: false,
           title: 'Frontend',
           theme: ThemeData(
             primarySwatch: Colors.blue,
