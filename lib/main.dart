@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+import 'package:my_blogapp_frontend/presentation/pages/unkown/unkown_page.dart';
 import 'package:my_blogapp_frontend/routes/app_pages.dart';
 import 'injection_container.dart' as di;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setUrlStrategy(PathUrlStrategy());
-  await initHiveForFlutter(); 
+  await initHiveForFlutter();
   await di.init();
 
   runApp(const MyApp());
@@ -33,7 +34,8 @@ class MyApp extends StatelessWidget {
           ),
           initialRoute: AppPages.initial,
           getPages: AppPages.routes,
-          
+          unknownRoute:
+              GetPage(name: '/notfound', page: () => const NotFoundPage()),
         ),
       ),
     );
