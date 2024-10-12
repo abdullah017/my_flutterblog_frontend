@@ -6,11 +6,13 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:my_blogapp_frontend/presentation/controllers/post_controller/post_controller.dart';
+import 'package:my_blogapp_frontend/presentation/controllers/theme_controller/theme_controller.dart';
 import 'package:my_blogapp_frontend/presentation/widgets/post_card.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 
 class HomePage extends StatelessWidget {
   final PostController controller = Get.find<PostController>();
+  final ThemeController themeController = Get.find<ThemeController>();
 
   HomePage({super.key});
 
@@ -26,7 +28,11 @@ class HomePage extends StatelessWidget {
           IconButton(onPressed: () {}, icon: const Icon(Ionicons.logo_github)),
           IconButton(onPressed: () {}, icon: const Icon(Ionicons.logo_twitter)),
           IconButton(
-              onPressed: () {}, icon: const Icon(Ionicons.logo_instagram))
+              onPressed: () {}, icon: const Icon(Ionicons.logo_instagram)),
+          IconButton(
+              onPressed: () {
+                themeController.switchTheme();
+              }, icon: const Icon(Icons.wb_sunny_rounded)),
         ],
       ),
       body: CustomScrollView(
@@ -88,7 +94,7 @@ class HomePage extends StatelessWidget {
           // Search Bar Bölümü
           SliverPadding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 50.0, vertical: 10.0),
+                const EdgeInsets.symmetric(horizontal: 150.0, vertical: 10.0),
             sliver: SliverToBoxAdapter(
               child: Center(
                 child: Card(

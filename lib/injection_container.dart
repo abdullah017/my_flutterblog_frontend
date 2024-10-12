@@ -5,6 +5,7 @@ import 'package:my_blogapp_frontend/domain/repositories/post_repositories.dart';
 import 'package:my_blogapp_frontend/domain/usecases/get_post_by_id_usecase.dart';
 import 'package:my_blogapp_frontend/domain/usecases/get_post_usecase.dart';
 import 'package:my_blogapp_frontend/presentation/controllers/post_controller/post_controller.dart';
+import 'package:my_blogapp_frontend/presentation/controllers/theme_controller/theme_controller.dart';
 import 'graphql/graphql_client.dart';
 import 'data/datasources/post_remote_data_source.dart';
 import 'data/repositories/post_repository_impl.dart';
@@ -31,4 +32,6 @@ Future<void> init() async {
         getPosts: Get.find<GetPosts>(),
         getPostById: Get.find<GetPostById>(),
       ));
+
+  Get.lazyPut<ThemeController>(() => ThemeController());
 }
