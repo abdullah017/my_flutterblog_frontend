@@ -9,7 +9,6 @@ import 'package:my_blogapp_frontend/presentation/controllers/post_controller/pos
 import 'package:my_blogapp_frontend/presentation/controllers/theme_controller/theme_controller.dart';
 import 'package:my_blogapp_frontend/presentation/widgets/post_card.dart';
 
-
 class HomePage extends StatelessWidget {
   final PostController controller = Get.find<PostController>();
   final ThemeController themeController = Get.find<ThemeController>();
@@ -18,65 +17,93 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Temaya göre uygun renkleri al
+    final theme = Theme.of(context);
+    final isDarkMode = theme.brightness == Brightness.dark;
+
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: theme.scaffoldBackgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: Image.asset('assets/abdullahtas_LOGO.png'),
+        backgroundColor: theme.appBarTheme.backgroundColor,
+        elevation: theme.appBarTheme.elevation,
+        iconTheme: theme.appBarTheme.iconTheme,
+        title: isDarkMode
+            ? Image.asset(
+                'assets/abdullahtas_dark.png',
+                height: 40,
+              )
+            : Image.asset(
+                'assets/abdullahtas_LOGO.png',
+                height: 40,
+              ),
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Ionicons.logo_github)),
-          IconButton(onPressed: () {}, icon: const Icon(Ionicons.logo_twitter)),
           IconButton(
-              onPressed: () {}, icon: const Icon(Ionicons.logo_instagram)),
+            onPressed: () {},
+            icon: const Icon(Ionicons.logo_github),
+            color: theme.iconTheme.color,
+          ),
           IconButton(
-              onPressed: () {
-                themeController.switchTheme();
-              }, icon: const Icon(Icons.wb_sunny_rounded)),
+            onPressed: () {},
+            icon: const Icon(Ionicons.logo_twitter),
+            color: theme.iconTheme.color,
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Ionicons.logo_instagram),
+            color: theme.iconTheme.color,
+          ),
+          IconButton(
+            onPressed: () {
+              themeController.switchTheme();
+            },
+            icon: Icon(
+              isDarkMode ? Icons.dark_mode : Icons.light_mode,
+              color: theme.iconTheme.color,
+            ),
+          ),
         ],
       ),
       body: CustomScrollView(
         slivers: [
           // Başlık Bölümü
-
           SliverPadding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 50.0, vertical: 20.0),
+                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
             sliver: SliverToBoxAdapter(
               child: Center(
                 child: AnimatedTextKit(
                   animatedTexts: [
                     TyperAnimatedText(
                       'Flutter...',
-                      textStyle: const TextStyle(
+                      textStyle: theme.textTheme.headlineMedium?.copyWith(
                         fontSize: 32.0,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     TyperAnimatedText(
                       'Dart...',
-                      textStyle: const TextStyle(
+                      textStyle: theme.textTheme.headlineMedium?.copyWith(
                         fontSize: 32.0,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     TyperAnimatedText(
                       'Hasura...',
-                      textStyle: const TextStyle(
+                      textStyle: theme.textTheme.headlineMedium?.copyWith(
                         fontSize: 32.0,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     TyperAnimatedText(
                       'GraphQL...',
-                      textStyle: const TextStyle(
+                      textStyle: theme.textTheme.headlineMedium?.copyWith(
                         fontSize: 32.0,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     TyperAnimatedText(
                       'Firebase...',
-                      textStyle: const TextStyle(
+                      textStyle: theme.textTheme.headlineMedium?.copyWith(
                         fontSize: 32.0,
                         fontWeight: FontWeight.bold,
                       ),
@@ -94,15 +121,15 @@ class HomePage extends StatelessWidget {
           // Search Bar Bölümü
           SliverPadding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 150.0, vertical: 10.0),
+                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
             sliver: SliverToBoxAdapter(
               child: Center(
                 child: Card(
-                  color: Colors.grey.shade100,
+                  color: theme.cardColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15.0),
                   ),
-                  elevation: 0,
+                  elevation: 2,
                   child: Padding(
                     padding: const EdgeInsets.all(18.0),
                     child: Container(
@@ -112,36 +139,54 @@ class HomePage extends StatelessWidget {
                               controller.searchTerm.value = value;
                             },
                             decoration: InputDecoration(
-                                hintText: 'Makele ara...',
-                                prefixIcon: const Icon(Icons.search),
-                                suffixIcon:
-                                    controller.searchTerm.value.isNotEmpty
-                                        ? IconButton(
-                                            icon: const Icon(Icons.clear),
-                                            onPressed: () {
-                                              controller.searchTerm.value = '';
-                                            },
-                                          )
-                                        : null,
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  borderSide:
-                                      const BorderSide(color: Colors.grey),
+                              hintText: 'Makale ara...',
+                              prefixIcon: Icon(Icons.search,
+                                  color: isDarkMode
+                                      ? Colors.white
+                                      : Colors.grey.shade700),
+                              suffixIcon: controller.searchTerm.value.isNotEmpty
+                                  ? IconButton(
+                                      icon: Icon(Icons.clear,
+                                          color: isDarkMode
+                                              ? Colors.white
+                                              : Colors.grey.shade700),
+                                      onPressed: () {
+                                        controller.searchTerm.value = '';
+                                      },
+                                    )
+                                  : null,
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                                borderSide: BorderSide(
+                                  color: isDarkMode
+                                      ? Colors.grey.shade700
+                                      : Colors.grey,
                                 ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  borderSide: const BorderSide(
-                                    color: Colors.grey,
-                                  ),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                                borderSide: BorderSide(
+                                  color: isDarkMode
+                                      ? Colors.grey.shade700
+                                      : Colors.grey,
                                 ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  borderSide: const BorderSide(
-                                    color: Colors.grey,
-                                  ),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                                borderSide: BorderSide(
+                                  color: isDarkMode
+                                      ? Colors.blueAccent
+                                      : Colors.blue,
                                 ),
-                                filled: true,
-                                fillColor: Colors.white),
+                              ),
+                              filled: true,
+                              fillColor: isDarkMode
+                                  ? Colors.grey.shade800
+                                  : Colors.grey.shade200,
+                            ),
+                            style: TextStyle(
+                              color: isDarkMode ? Colors.white : Colors.black,
+                            ),
                           )),
                     ),
                   ),
@@ -152,7 +197,7 @@ class HomePage extends StatelessWidget {
 
           // Yazı Listesi
           SliverPadding(
-            padding: const EdgeInsets.symmetric(horizontal: 50.0),
+            padding: const EdgeInsets.symmetric(horizontal: 200.0),
             sliver: Obx(() {
               if (controller.isLoading.value) {
                 return const SliverToBoxAdapter(
@@ -161,10 +206,13 @@ class HomePage extends StatelessWidget {
               }
 
               if (controller.filteredPosts.isEmpty) {
-                return const SliverToBoxAdapter(
+                return SliverToBoxAdapter(
                   child: Center(
                     child: Text(
                       'Hiç yazı bulunamadı.',
+                      style: theme.textTheme.bodyLarge?.copyWith(
+                        fontSize: 18.0,
+                      ),
                     ),
                   ),
                 );
@@ -190,14 +238,17 @@ class HomePage extends StatelessWidget {
                   crossAxisSpacing: 20,
                   itemCount: controller.filteredPosts.length,
                   itemBuilder: (context, index) {
-                    return PostCard(post: controller.filteredPosts[index]);
+                    return Container(
+                        width: 500,
+                        height: 340,
+                        child: PostCard(post: controller.filteredPosts[index]));
                   },
                   staggeredTileBuilder: (index) => const StaggeredTile.fit(2),
                 ),
               );
             }),
           ),
-          // Alt Boşluk (Optional)
+          // Alt Boşluk (Opsiyonel)
           SliverPadding(
             padding: const EdgeInsets.only(bottom: 20.0),
             sliver: SliverToBoxAdapter(child: Container()),

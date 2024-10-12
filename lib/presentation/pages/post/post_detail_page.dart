@@ -16,10 +16,21 @@ class PostDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final PostController controller = Get.find<PostController>();
+    final theme = Theme.of(context);
+    final isDarkMode = theme.brightness == Brightness.dark;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Yazı Detayı'),
+        title: Text(
+          'Yazı Detayı',
+          style: theme.textTheme.titleLarge?.copyWith(
+            color: theme.appBarTheme.titleTextStyle?.color,
+          ),
+        ),
+        backgroundColor: theme.appBarTheme.backgroundColor,
+        elevation: theme.appBarTheme.elevation,
+        iconTheme: theme.appBarTheme.iconTheme,
+        centerTitle: true,
       ),
       body: FutureBuilder<Post?>(
         future: controller
@@ -31,13 +42,23 @@ class PostDetailPage extends StatelessWidget {
           }
 
           if (snapshot.hasError) {
-            return Center(child: Text('Hata: ${snapshot.error}'));
+            return Center(
+                child: Text(
+              'Hata: ${snapshot.error}',
+              style: theme.textTheme.bodyLarge,
+            ));
           }
 
           final Post? post = snapshot.data;
 
           if (post == null) {
-            return const Center(child: Text('Yazı bulunamadı.'));
+            return Center(
+                child: Text(
+              'Yazı bulunamadı.',
+              style: theme.textTheme.bodyLarge?.copyWith(
+                fontSize: 18,
+              ),
+            ));
           }
 
           return SingleChildScrollView(
@@ -69,10 +90,9 @@ class PostDetailPage extends StatelessWidget {
                     const SizedBox(height: 16),
 
                     // Başlık
-                    Text(
+                    SelectableText(
                       post.title,
-                      style: const TextStyle(
-                        fontSize: 28,
+                      style: theme.textTheme.headlineSmall?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -81,15 +101,15 @@ class PostDetailPage extends StatelessWidget {
                     // Oluşturulma Tarihi
                     Text(
                       'Oluşturulma Tarihi: ${post.createdAt.toLocal().toString().split(' ')[0]}',
-                      style: TextStyle(
-                        color: Colors.grey[600],
-                        fontSize: 14,
+                      style: theme.textTheme.bodySmall?.copyWith(
+                        color:
+                            isDarkMode ? Colors.white70 : Colors.grey.shade600,
                       ),
                     ),
                     const SizedBox(height: 24),
 
                     // İçerik
-                    Linkify(
+                    SelectableLinkify(
                       onOpen: (link) async {
                         final Uri uri = Uri.parse(link.url);
                         if (await canLaunchUrl(uri)) {
@@ -100,20 +120,18 @@ class PostDetailPage extends StatelessWidget {
                         }
                       },
                       text: post.content,
-                      style: const TextStyle(
+                      style: theme.textTheme.bodyLarge?.copyWith(
                         fontSize: 18.0,
                         height: 1.6,
-                        color: Colors.black87,
+                        color: theme.textTheme.bodyLarge?.color,
                       ),
-                      linkStyle: const TextStyle(
-                        color: Colors.blue,
+                      linkStyle: TextStyle(
+                        color: theme.colorScheme.primary,
                         decoration: TextDecoration.underline,
                       ),
                       options: const LinkifyOptions(looseUrl: true),
                       textAlign: TextAlign.left,
-                      //selectable: true,
                       maxLines: null,
-                      overflow: TextOverflow.visible,
                     ),
                   ],
                 ),
