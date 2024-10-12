@@ -70,7 +70,7 @@ class NotFoundPage extends StatelessWidget {
               // Ana Sayfaya Dön Butonu
               ElevatedButton.icon(
                 onPressed: () {
-                  Get.offAllNamed('/home'); // Ana sayfaya yönlendirir
+                  Get.offAllNamed('/'); // Ana sayfaya yönlendirir
                 },
                 icon: const Icon(Icons.home),
                 label: Text(
@@ -85,8 +85,9 @@ class NotFoundPage extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
-                  backgroundColor:
-                      isDarkMode ? Colors.white : Colors.white, // Buton rengi
+                  backgroundColor: isDarkMode
+                      ? Colors.blueAccent
+                      : Colors.white, // Buton rengi
                 ),
               ),
             ],

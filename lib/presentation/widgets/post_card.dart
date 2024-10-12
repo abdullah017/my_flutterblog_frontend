@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:my_blogapp_frontend/core/helper/route_slug_helper.dart';
 import 'package:my_blogapp_frontend/domain/entities/post_entites.dart';
 import 'package:my_blogapp_frontend/routes/app_pages.dart';
-import 'package:intl/intl.dart';
 
 class PostCard extends StatefulWidget {
   final Post post;
@@ -31,6 +31,7 @@ class _PostCardState extends State<PostCard> {
   @override
   Widget build(BuildContext context) {
     final DateFormat formatter = DateFormat('dd MMM yyyy');
+
     return GestureDetector(
       onTap: () {
         final String slugifiedTitle =
@@ -63,12 +64,10 @@ class _PostCardState extends State<PostCard> {
             borderRadius: BorderRadius.circular(15),
           ),
           child: Card(
-            color: Colors.transparent,
-            clipBehavior: Clip.none,
+            color: Theme.of(context).cardColor,
             elevation: 0,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            //margin: EdgeInsets.zero,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -76,23 +75,37 @@ class _PostCardState extends State<PostCard> {
                 if (widget.post.coverImage != null &&
                     widget.post.coverImage!.isNotEmpty)
                   ClipRRect(
-                    clipBehavior: Clip.hardEdge,
                     borderRadius:
-                        const BorderRadius.vertical(top: Radius.circular(30)),
+                        const BorderRadius.vertical(top: Radius.circular(15)),
                     child: CachedNetworkImage(
                       imageUrl: widget.post.coverImage!,
                       placeholder: (context, url) => Container(
-                        height: 300,
-                        color: Colors.grey[300],
+                        height: 150,
+                        color: Theme.of(context).colorScheme.surface,
                         child: const Center(child: CircularProgressIndicator()),
                       ),
-                      errorWidget: (context, url, error) => Container(
-                        height: 150,
-                        color: Colors.grey[300],
-                        child: const Icon(Icons.broken_image,
-                            size: 50, color: Colors.grey),
-                      ),
-                      height: 300,
+                      errorWidget: (context, url, error) {
+                        print('CachedNetworkImage error: $error');
+                        return Container(
+                          height: 150,
+                          color: Theme.of(context).colorScheme.surface,
+                          child: const Icon(Icons.broken_image,
+                              size: 50, color: Colors.grey),
+                        );
+                      },
+                      height: 200,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
+                  )
+                else
+                  // Varsayılan bir kapak resmi göster
+                  ClipRRect(
+                    borderRadius:
+                        const BorderRadius.vertical(top: Radius.circular(15)),
+                    child: Image.asset(
+                      'assets/images/default_cover.png', // Projenize uygun varsayılan resim ekleyin
+                      height: 150,
                       width: double.infinity,
                       fit: BoxFit.cover,
                     ),
@@ -106,9 +119,10 @@ class _PostCardState extends State<PostCard> {
                       Text(
                         widget.post.title,
                         style: GoogleFonts.lora(
-                          textStyle: const TextStyle(
+                          textStyle: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
+                            color: Theme.of(context).textTheme.bodyLarge?.color,
                           ),
                         ),
                       ),
@@ -117,9 +131,10 @@ class _PostCardState extends State<PostCard> {
                       Text(
                         getSnippet(widget.post.content),
                         style: GoogleFonts.openSans(
-                          textStyle: const TextStyle(
+                          textStyle: TextStyle(
                             fontSize: 14,
-                            color: Colors.black54,
+                            color:
+                                Theme.of(context).textTheme.bodyMedium?.color,
                           ),
                         ),
                         maxLines: 2,
@@ -129,15 +144,19 @@ class _PostCardState extends State<PostCard> {
                       // Yayın Tarihi
                       Row(
                         children: [
-                          const Icon(Icons.calendar_today,
-                              size: 16, color: Colors.grey),
+                          Icon(Icons.calendar_today,
+                              size: 16,
+                              color: Theme.of(context).iconTheme.color),
                           const SizedBox(width: 4),
                           Text(
                             formatter.format(widget.post.createdAt),
                             style: GoogleFonts.openSans(
-                              textStyle: const TextStyle(
+                              textStyle: TextStyle(
                                 fontSize: 12,
-                                color: Colors.grey,
+                                color: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium
+                                    ?.color,
                               ),
                             ),
                           ),
