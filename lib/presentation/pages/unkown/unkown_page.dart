@@ -85,9 +85,8 @@ class NotFoundPage extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
-                  backgroundColor: isDarkMode
-                      ? Colors.blueAccent
-                      : Colors.blue, // Buton rengi
+                  backgroundColor:
+                      isDarkMode ? Colors.white : Colors.white, // Buton rengi
                 ),
               ),
             ],
