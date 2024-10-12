@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:get/get.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:my_blogapp_frontend/core/helper/text_capitalize_helper.dart';
 import 'package:my_blogapp_frontend/domain/entities/post_entites.dart';
 import '../../controllers/post_controller/post_controller.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -22,7 +23,7 @@ class PostDetailPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Yazı Detayı',
+          capitalize(title), //Slug için değişen başlık kısmını tekrar düzenleme
           style: theme.textTheme.titleLarge?.copyWith(
             color: theme.appBarTheme.titleTextStyle?.color,
           ),

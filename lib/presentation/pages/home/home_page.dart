@@ -238,7 +238,7 @@ class HomePage extends StatelessWidget {
                   crossAxisSpacing: 20,
                   itemCount: controller.filteredPosts.length,
                   itemBuilder: (context, index) {
-                    return Container(
+                    return SizedBox(
                         width: 500,
                         height: 340,
                         child: PostCard(post: controller.filteredPosts[index]));

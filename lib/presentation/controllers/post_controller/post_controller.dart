@@ -28,6 +28,8 @@ class PostController extends GetxController {
   var errorMessage = ''.obs;
   var selectedPost = Rxn<Post>();
 
+  
+
   @override
   void onInit() {
     super.onInit();
