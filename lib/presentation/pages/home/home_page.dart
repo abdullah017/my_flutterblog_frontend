@@ -1,8 +1,10 @@
 // lib/presentation/pages/home_page.dart
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
+import 'package:ionicons/ionicons.dart';
 import 'package:my_blogapp_frontend/presentation/controllers/post_controller/post_controller.dart';
 import 'package:my_blogapp_frontend/presentation/widgets/post_card.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,50 +19,68 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text(
-          'Blog Admin Panel',
-          style: GoogleFonts.inter(
-            textStyle: const TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: const FlutterLogo(),
+        title: Image.asset('assets/abdullahtas_LOGO.png'),
         actions: [
+          IconButton(onPressed: () {}, icon: const Icon(Ionicons.logo_github)),
+          IconButton(onPressed: () {}, icon: const Icon(Ionicons.logo_twitter)),
           IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.breakfast_dining_rounded),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.breakfast_dining_rounded),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.breakfast_dining_rounded),
-          )
+              onPressed: () {}, icon: const Icon(Ionicons.logo_instagram))
         ],
-        centerTitle: true,
       ),
       body: CustomScrollView(
         slivers: [
           // Başlık Bölümü
+
           SliverPadding(
             padding:
                 const EdgeInsets.symmetric(horizontal: 50.0, vertical: 20.0),
             sliver: SliverToBoxAdapter(
-              child: Text(
-                'Blog',
-                style: GoogleFonts.inter(
-                  textStyle: const TextStyle(
-                    fontSize: 60,
-                    fontWeight: FontWeight.bold,
-                  ),
+              child: Center(
+                child: AnimatedTextKit(
+                  animatedTexts: [
+                    TyperAnimatedText(
+                      'Flutter...',
+                      textStyle: const TextStyle(
+                        fontSize: 32.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    TyperAnimatedText(
+                      'Dart...',
+                      textStyle: const TextStyle(
+                        fontSize: 32.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    TyperAnimatedText(
+                      'Hasura...',
+                      textStyle: const TextStyle(
+                        fontSize: 32.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    TyperAnimatedText(
+                      'GraphQL...',
+                      textStyle: const TextStyle(
+                        fontSize: 32.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    TyperAnimatedText(
+                      'Firebase...',
+                      textStyle: const TextStyle(
+                        fontSize: 32.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                  totalRepeatCount: 4,
+                  pause: const Duration(milliseconds: 1000),
+                  displayFullTextOnTap: true,
+                  stopPauseOnTap: true,
                 ),
-                textAlign: TextAlign.left,
               ),
             ),
           ),
@@ -99,9 +119,8 @@ class HomePage extends StatelessWidget {
                                         : null,
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10.0),
-                                  borderSide: const BorderSide(
-                                    color: Colors.grey,
-                                  ),
+                                  borderSide:
+                                      const BorderSide(color: Colors.grey),
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10.0),
