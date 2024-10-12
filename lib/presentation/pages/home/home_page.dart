@@ -1,8 +1,9 @@
 // lib/presentation/pages/home_page.dart
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
-import 'package:my_blogapp_frontend/presentation/controllers/post_controller.dart';
+import 'package:my_blogapp_frontend/presentation/controllers/post_controller/post_controller.dart';
 import 'package:my_blogapp_frontend/presentation/widgets/post_card.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -77,23 +78,32 @@ class HomePage extends StatelessWidget {
                   child: Center(child: Text('Hiç yazı bulunamadı.')),
                 );
               }
+              // Web olup olmadığını kontrol et
+              bool isWeb = kIsWeb;
+
+              // Web ise genişliğe göre, değilse varsayılan olarak 2 kullan
+              int crossAxisCount;
+
+              if (isWeb) {
+                double screenWidth = MediaQuery.of(context).size.width;
+                crossAxisCount = screenWidth < 600 ? 2 : 4;
+              } else {
+                crossAxisCount = 2;
+              }
 
               return SliverStaggeredGrid.countBuilder(
-                crossAxisCount: 4,
-                mainAxisSpacing: 20, // Daha makul spacing
-                crossAxisSpacing: 20, // Daha makul spacing
+                crossAxisCount: crossAxisCount,
+                mainAxisSpacing: 20,
+                crossAxisSpacing: 20,
                 itemCount: controller.posts.length,
                 itemBuilder: (context, index) {
                   return PostCard(post: controller.posts[index]);
                 },
                 staggeredTileBuilder: (index) => const StaggeredTile.fit(2),
               );
-            }),
+            }), 
           ),
           // Alt Boşluk
-          const SliverToBoxAdapter(
-            child: SizedBox(height: 50),
-          ),
         ],
       ),
     );

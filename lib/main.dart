@@ -2,13 +2,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
-import 'package:my_blogapp_frontend/presentation/pages/home_page.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+import 'package:my_blogapp_frontend/routes/app_pages.dart';
 import 'injection_container.dart' as di;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  await initHiveForFlutter(); // Hive için gerekli başlatma işlemi
+  setUrlStrategy(PathUrlStrategy());
+  await initHiveForFlutter(); 
   await di.init();
 
   runApp(const MyApp());
@@ -30,7 +31,9 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: HomePage(),
+          initialRoute: AppPages.initial,
+          getPages: AppPages.routes,
+          
         ),
       ),
     );

@@ -4,13 +4,14 @@ import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:get/get.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:my_blogapp_frontend/domain/entities/post_entites.dart';
-import '../../presentation/controllers/post_controller.dart';
+import '../../controllers/post_controller/post_controller.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PostDetailPage extends StatelessWidget {
   final int postId;
+  final String title;
 
-  const PostDetailPage({super.key, required this.postId});
+  const PostDetailPage({super.key, required this.postId, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -53,8 +54,7 @@ class PostDetailPage extends StatelessWidget {
                         imageUrl: post.coverImage!,
                         placeholder: (context, url) => const SizedBox(
                           height: 250,
-                          child:
-                              Center(child: CircularProgressIndicator()),
+                          child: Center(child: CircularProgressIndicator()),
                         ),
                         errorWidget: (context, url, error) => Container(
                           height: 250,
