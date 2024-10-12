@@ -15,7 +15,15 @@ class PostController extends GetxController {
     required this.getPostById,
   });
 
-  var posts = <Post>[].obs;
+  // All posts fetched from the backend
+  var allPosts = <Post>[].obs;
+
+  // Filtered posts based on the search term
+  var filteredPosts = <Post>[].obs;
+
+  // Search term entered by the user
+  var searchTerm = ''.obs;
+
   var isLoading = false.obs;
   var errorMessage = ''.obs;
   var selectedPost = Rxn<Post>();
@@ -24,6 +32,10 @@ class PostController extends GetxController {
   void onInit() {
     super.onInit();
     fetchPosts();
+    //Search
+    everAll([allPosts, searchTerm], (_) => filterPosts());
+    // debounce(searchTerm, (_) => filterPosts(),
+    //     time: const Duration(milliseconds: 300));
   }
 
   Future<void> fetchPosts() async {
@@ -34,10 +46,21 @@ class PostController extends GetxController {
         errorMessage.value = failure.message;
       },
       (fetchedPosts) {
-        posts.value = fetchedPosts;
+        allPosts.value = fetchedPosts;
       },
     );
     isLoading.value = false;
+  }
+
+  void filterPosts() {
+    if (searchTerm.value.isEmpty) {
+      filteredPosts.value = allPosts;
+    } else {
+      final query = searchTerm.value.toLowerCase();
+      filteredPosts.value = allPosts.where((post) {
+        return post.title.toLowerCase().contains(query);
+      }).toList();
+    }
   }
 
   Future<void> fetchPostById(int id) async {
