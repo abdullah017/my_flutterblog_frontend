@@ -7,7 +7,7 @@ import 'package:my_blogapp_frontend/core/constant/constant.dart';
 import 'package:my_blogapp_frontend/presentation/controllers/post_controller/post_controller.dart';
 import 'package:my_blogapp_frontend/presentation/controllers/theme_controller/theme_controller.dart';
 import 'package:my_blogapp_frontend/presentation/widgets/appbar/home_page_appbar_widget.dart';
-import 'package:my_blogapp_frontend/presentation/widgets/post_card.dart';
+import 'package:my_blogapp_frontend/presentation/widgets/post_card_widget/post_card.dart';
 
 class HomePage extends StatelessWidget {
   final PostController controller = Get.find<PostController>();
