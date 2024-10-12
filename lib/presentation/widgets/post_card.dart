@@ -36,7 +36,8 @@ class _PostCardState extends State<PostCard> {
       onTap: () {
         final String slugifiedTitle =
             RouteSlugHelper().slugify(widget.post.title);
-        Get.toNamed('${Routes.post_detail}/$slugifiedTitle-${widget.post.id}');
+        Get.toNamed('${Routes.post_detail}/$slugifiedTitle-${widget.post.id}',
+           );
       },
       child: MouseRegion(
         onEnter: (_) {
