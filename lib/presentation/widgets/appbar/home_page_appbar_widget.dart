@@ -38,6 +38,15 @@ class HomePageHeaderWidget extends StatelessWidget
         IconButton(
           onPressed: () {
             kIsWeb
+                ? html.window.open(linkedinLink, 'new tab')
+                : canLaunchUrlString(linkedinLink);
+          },
+          icon: const Icon(Ionicons.logo_linkedin),
+          color: theme.iconTheme.color,
+        ),
+        IconButton(
+          onPressed: () {
+            kIsWeb
                 ? html.window.open(githubLink, 'new tab')
                 : canLaunchUrlString(githubLink);
           },
@@ -62,13 +71,16 @@ class HomePageHeaderWidget extends StatelessWidget
           icon: const Icon(Ionicons.logo_instagram),
           color: theme.iconTheme.color,
         ),
-        IconButton(
-          onPressed: () {
-            themeController.switchTheme();
-          },
-          icon: Icon(
-            isDarkMode ? Icons.dark_mode : Icons.light_mode,
-            color: theme.iconTheme.color,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: IconButton(
+            onPressed: () {
+              themeController.switchTheme();
+            },
+            icon: Icon(
+              isDarkMode ? Icons.dark_mode : Icons.light_mode,
+              color: theme.iconTheme.color,
+            ),
           ),
         ),
       ],
