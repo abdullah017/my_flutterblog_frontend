@@ -12,7 +12,7 @@ class GraphQLService {
   );
 
   static final WebSocketLink websocketLink = WebSocketLink(
-    'wss://vortexsura.softvortex.com/v1/graphql',
+    webSocketLink,
     config: const SocketClientConfig(
       autoReconnect: true,
       inactivityTimeout: Duration(seconds: 30),

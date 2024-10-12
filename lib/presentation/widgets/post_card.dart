@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
+import 'package:my_blogapp_frontend/core/helper/route_slug_helper.dart';
 import 'package:my_blogapp_frontend/domain/entities/post_entites.dart';
-import '../../presentation/pages/post_detail_page.dart';
+import 'package:my_blogapp_frontend/routes/app_pages.dart';
 import 'package:intl/intl.dart';
 
 class PostCard extends StatefulWidget {
@@ -30,11 +31,11 @@ class _PostCardState extends State<PostCard> {
   @override
   Widget build(BuildContext context) {
     final DateFormat formatter = DateFormat('dd MMM yyyy');
-    print('PostCard: coverImage URL -> ${widget.post.coverImage}');
-
     return GestureDetector(
       onTap: () {
-        Get.to(() => PostDetailPage(postId: widget.post.id));
+        final String slugifiedTitle =
+            RouteSlugHelper().slugify(widget.post.title);
+        Get.toNamed('${Routes.post_detail}/$slugifiedTitle-${widget.post.id}');
       },
       child: MouseRegion(
         onEnter: (_) {
@@ -63,6 +64,7 @@ class _PostCardState extends State<PostCard> {
           ),
           child: Card(
             color: Colors.transparent,
+            clipBehavior: Clip.none,
             elevation: 0,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
@@ -74,6 +76,7 @@ class _PostCardState extends State<PostCard> {
                 if (widget.post.coverImage != null &&
                     widget.post.coverImage!.isNotEmpty)
                   ClipRRect(
+                    clipBehavior: Clip.hardEdge,
                     borderRadius:
                         const BorderRadius.vertical(top: Radius.circular(30)),
                     child: CachedNetworkImage(
