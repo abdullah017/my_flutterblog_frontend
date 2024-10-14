@@ -1,3 +1,4 @@
+// lib/presentation/pages/home_page.dart
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -171,7 +172,7 @@ class HomePage extends StatelessWidget {
 
   SliverPadding articleList(ThemeData theme, BuildContext context) {
     return SliverPadding(
-      padding: const EdgeInsets.symmetric(horizontal: 200.0),
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
       sliver: Obx(() {
         if (controller.isLoading.value) {
           return const SliverToBoxAdapter(
@@ -191,17 +192,20 @@ class HomePage extends StatelessWidget {
             ),
           );
         }
-        // Web olup olmadığını kontrol et
-        bool isWeb = kIsWeb;
 
-        // Web ise genişliğe göre, değilse varsayılan olarak 2 kullan
+        // Responsive crossAxisCount
+        double screenWidth = MediaQuery.of(context).size.width;
         int crossAxisCount;
 
-        if (isWeb) {
-          double screenWidth = MediaQuery.of(context).size.width;
-          crossAxisCount = screenWidth < 600 ? 2 : 4;
-        } else {
+        if (screenWidth < 600) {
+          // Mobil cihazlar
+          crossAxisCount = 1;
+        } else if (screenWidth < 1200) {
+          // Tabletler
           crossAxisCount = 2;
+        } else {
+          // Web ve geniş ekranlar
+          crossAxisCount = 4;
         }
 
         return SliverPadding(
@@ -212,12 +216,9 @@ class HomePage extends StatelessWidget {
             crossAxisSpacing: 20,
             itemCount: controller.filteredPosts.length,
             itemBuilder: (context, index) {
-              return SizedBox(
-                  width: 500,
-                  height: 340,
-                  child: PostCard(post: controller.filteredPosts[index]));
+              return PostCard(post: controller.filteredPosts[index]);
             },
-            staggeredTileBuilder: (index) => const StaggeredTile.fit(2),
+            staggeredTileBuilder: (index) => const StaggeredTile.fit(1),
           ),
         );
       }),
