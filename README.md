@@ -17,36 +17,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ## PACKAGE
 
-### TR Kullanılan Paketler
-
-| **Paket**                      | **Açıklama**                                                                                         |
-|--------------------------------|------------------------------------------------------------------------------------------------------|
-| `get: ^4.6.5`                   | State management, dependency injection ve route management çözümleri sunan Flutter için GetX paketinin bir parçasıdır. |
-| `get_storage`                  | GetX tarafından sağlanan basit anahtar-değer depolama çözümü.                                       |
-| `graphql_flutter: ^5.1.2`      | Flutter için bir GraphQL istemcisi; GraphQL API'leriyle etkileşim kurmanıza olanak tanır.            |
-| `flutter_quill`                | Flutter için zengin metin editörü ve metin formatlama kütüphanesi.                                   |
-| `image_picker`                 | Flutter uygulamalarında galeriden veya kameradan görüntü seçmek için kullanılan bir eklenti.          |
-| `fl_chart`                     | Çeşitli türlerde grafikler oluşturmak için Flutter için bir grafik kütüphanesi.                      |
-| `another_flushbar`             | Özelleştirilebilir flushbar bildirimleri göstermek için kullanılan bir paket.                        |
-| `flutter_screenutil`           | Ekran ve yazı boyutunu uyarlamak için kullanılan bir Flutter eklentisi.                              |
-| `dartz`                        | Dart için fonksiyonel programlama araçları sunar.                                                   |
-| `flutter_dotenv: ^5.1.0`       | `.env` dosyasından ortam değişkenlerini Dart'ın ortam değişkenlerine yükler.                        |
-| `cached_network_image: ^3.4.1` | Flutter'da ağ üzerinden görüntü yüklemek ve önbelleğe almak için kullanılan bir kütüphane.            |
-| `flutter_html`                 | HTML içeriğini Flutter uygulamalarında render etmek için kullanılan bir paket.                      |
-| `equatable`                    | Dart nesnelerinde değer eşitliğini basitleştiren bir paket.                                        |
-| `webview_flutter`              | Flutter uygulamalarında yerel WebView kullanarak web içeriğini gömmenizi sağlar.                     |
-| `url_launcher`                 | URL'leri tarayıcıda veya diğer uygulamalarda başlatmak için kullanılan bir Flutter eklentisi.       |
-| `flutter_linkify`              | Metindeki URL'leri tıklanabilir bağlantılara dönüştürmek için kullanılan bir paket.                   |
-| `flutter_staggered_grid_view: ^0.4.0` | Flutter için kademeli (staggered) grid view sağlayan bir paket.                                |
-| `google_fonts`                 | Google Fonts'tan fontları kolayca kullanmanızı sağlayan bir Flutter paketi.                         |
-| `intl: ^0.19.0`                | Dart ve Flutter için uluslararasılaştırma ve yerelleştirme olanakları sağlar.                        |
-| `ionicons: ^0.2.2`              | Flutter için Ionicons ikon setini sağlayan bir paket.                                              |
-| `animated_text_kit: ^4.2.2`     | Animasyonlu metin efektleri oluşturmak için kullanılan bir Flutter paketi.                           |
-
-
-
-
-### EN Used Packages
+###  Used Packages
 
 | **Package**                           | **Description**                                                                                                 |
 |---------------------------------------|-----------------------------------------------------------------------------------------------------------------|
