@@ -44,9 +44,9 @@ samples, guidance on mobile development, and a full API reference.
 | `animated_text_kit: ^4.2.2`     | Animasyonlu metin efektleri oluşturmak için kullanılan bir Flutter paketi.                           |
 
 
-### EN USE PACKAGE
 
-### Used Packages
+
+### EN Used Packages
 
 | **Package**                           | **Description**                                                                                                 |
 |---------------------------------------|-----------------------------------------------------------------------------------------------------------------|
