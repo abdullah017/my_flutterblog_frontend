@@ -14,7 +14,15 @@ const String animatedHasura = 'Hasura...';
 const String animatedGraphQL = 'GraphQL...';
 const String animatedFirebase = 'Firebase...';
 
-const String linkedinLink = 'https://www.linkedin.com/in/abdullahtas/';
-const String githubLink = 'https://github.com/abdullah017';
-const String twitterLink = 'https://x.com/0abdullahtas';
-const String instagramLink = 'https://www.instagram.com/0abdullahtas/';
+const String linkedinWebLink = 'https://www.linkedin.com/in/abdullahtas/';
+const String githubWebLink = 'https://github.com/abdullah017';
+const String twitterWebLink = 'https://x.com/0abdullahtas';
+const String instagramWebLink = 'https://www.instagram.com/0abdullahtas/';
+
+const String linkedinAppLink = 'linkedin://profile/abdullahtas';
+const String githubAppLink = 'https://github.com/abdullah017';
+const String twitterAppLink = 'https://x.com/0abdullahtas';
+const String instagramAppLink = 'https://www.instagram.com/0abdullahtas/';
+
+
+
