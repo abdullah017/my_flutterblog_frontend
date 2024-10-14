@@ -15,6 +15,9 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
+#### NOTE: When testing the project on your computer, if you encounter a problem with images not loading on the Web, please run the project by typing this code in the terminal;
+- flutter run -d chrome --web-renderer html
+
 ## PACKAGE
 
 ###  Used Packages
