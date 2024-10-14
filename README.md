@@ -75,47 +75,21 @@ samples, guidance on mobile development, and a full API reference.
 
 
 
-### **Gelecek Özellikler (Future Features)**
+### **Future Features**
 
-1. **Yorum Sistemi (Comment System)**
-   - **Açıklama:** Kullanıcıların yazılara yorum yapmasını ve etkileşimde bulunmasını sağlar.
-   - **Description:** Allows users to comment on posts and interact with each other.
+| **Feature**                   | **Description (English)**                                               |
+|-------------------------------|------------------------------------------------------------------------|
+| **Comment System**            | Allows users to comment on posts and interact with each other.         |
+| **Like and Share**            | Encourages users to like posts and share them on social media platforms. |
+| **Categories and Tags**       | Facilitates organizing posts by categories and tags for easier navigation. |
+| **Search and Filtering**      | Enables users to easily find desired content through search and filtering options. |
+| **Notifications**             | Notifies users about important events such as new comments, likes, or follows. |
+| **Multilanguage Support**     | Allows the application to be used in multiple languages for a wider audience. |
+| **Offline Support**           | Enables users to access and interact with the app even without an internet connection. |
+| **Performance Enhancements**  | Improves the speed and efficiency of the application for a better user experience. |
+| **Mobile Push Notifications** | Informs users about in-app updates and activities through push notifications on mobile devices. |
+| **Web Push Notifications**    | Notifies web users about in-app updates and activities through web push notifications. |
 
-2. **Beğeni ve Paylaşım (Like and Share)**
-   - **Açıklama:** Kullanıcıların yazıları beğenmesini ve sosyal medyada paylaşmasını teşvik eder.
-   - **Description:** Encourages users to like posts and share them on social media platforms.
-
-3. **Kategoriler ve Etiketler (Categories and Tags)**
-   - **Açıklama:** Yazıları kategorilere ve etiketlere ayırarak düzenlemeyi kolaylaştırır.
-   - **Description:** Facilitates organizing posts by categories and tags for easier navigation.
-
-4. **Arama ve Filtreleme (Search and Filtering)**
-   - **Açıklama:** Kullanıcıların istedikleri içerikleri kolayca bulmalarını sağlar.
-   - **Description:** Enables users to easily find desired content through search and filtering options.
-
-5. **Bildirimler (Notifications)**
-   - **Açıklama:** Kullanıcıları önemli olaylar hakkında bilgilendirir.
-   - **Description:** Notifies users about important events such as new comments, likes, or follows.
-
-6. **Çoklu Dil Desteği (Multilanguage Support)**
-   - **Açıklama:** Uygulamanızın birden fazla dilde kullanılabilmesini sağlar.
-   - **Description:** Allows the application to be used in multiple languages for a wider audience.
-
-7. **Offline Desteği (Offline Support)**
-   - **Açıklama:** Kullanıcıların internet bağlantısı olmadığında bile uygulamayı kullanabilmelerini sağlar.
-   - **Description:** Enables users to access and interact with the app even without an internet connection.
-
-8. **Performans İyileştirmeleri (Performance Enhancements)**
-   - **Açıklama:** Uygulamanızın hızını ve verimliliğini artırır.
-   - **Description:** Improves the speed and efficiency of the application for a better user experience.
-
-9. **Mobil Push Bildirimleri (Mobile Push Notifications)**
-   - **Açıklama:** Kullanıcıları uygulama içi güncellemeler hakkında bilgilendirir.
-   - **Description:** Informs users about in-app updates and activities through push notifications on mobile devices.
-
-10. **Web Push Bildirimleri (Web Push Notifications)**
-    - **Açıklama:** Web kullanıcılarını uygulama içi güncellemeler hakkında bilgilendirir.
-    - **Description:** Notifies web users about in-app updates and activities through web push notifications.
 
 
 
