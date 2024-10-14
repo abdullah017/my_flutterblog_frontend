@@ -83,7 +83,6 @@ samples, guidance on mobile development, and a full API reference.
 | **Like and Share**            | Encourages users to like posts and share them on social media platforms. |
 | **Categories and Tags**       | Facilitates organizing posts by categories and tags for easier navigation. |
 | **Search and Filtering**      | Enables users to easily find desired content through search and filtering options. |
-| **Notifications**             | Notifies users about important events such as new comments, likes, or follows. |
 | **Multilanguage Support**     | Allows the application to be used in multiple languages for a wider audience. |
 | **Offline Support**           | Enables users to access and interact with the app even without an internet connection. |
 | **Performance Enhancements**  | Improves the speed and efficiency of the application for a better user experience. |
