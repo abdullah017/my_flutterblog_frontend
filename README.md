@@ -29,7 +29,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ## SS FOR MOBILE
 
-<img width="1434" alt="Ekran Resmi 2024-10-13 01 14 39" src="https://github.com/user-attachments/assets/6a68aed6-6bc2-4882-84c8-1fa9962a8543">
+<img width="450" height="100" alt="Ekran Resmi 2024-10-13 01 14 39" src="https://github.com/user-attachments/assets/6a68aed6-6bc2-4882-84c8-1fa9962a8543">
 
 ![Simulator Screenshot - iPhone 15 Pro - 2024-10-14 at 18 22 35](https://github.com/user-attachments/assets/6a68aed6-6bc2-4882-84c8-1fa9962a8543)
 
