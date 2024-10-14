@@ -74,6 +74,86 @@ samples, guidance on mobile development, and a full API reference.
 
 
 
+
+### **Gelecek Özellikler (Future Features)**
+
+1. **Yorum Sistemi (Comment System)**
+   - **Açıklama:** Kullanıcıların yazılara yorum yapmasını ve etkileşimde bulunmasını sağlar.
+   - **Description:** Allows users to comment on posts and interact with each other.
+
+2. **Beğeni ve Paylaşım (Like and Share)**
+   - **Açıklama:** Kullanıcıların yazıları beğenmesini ve sosyal medyada paylaşmasını teşvik eder.
+   - **Description:** Encourages users to like posts and share them on social media platforms.
+
+3. **Kategoriler ve Etiketler (Categories and Tags)**
+   - **Açıklama:** Yazıları kategorilere ve etiketlere ayırarak düzenlemeyi kolaylaştırır.
+   - **Description:** Facilitates organizing posts by categories and tags for easier navigation.
+
+4. **Arama ve Filtreleme (Search and Filtering)**
+   - **Açıklama:** Kullanıcıların istedikleri içerikleri kolayca bulmalarını sağlar.
+   - **Description:** Enables users to easily find desired content through search and filtering options.
+
+5. **Bildirimler (Notifications)**
+   - **Açıklama:** Kullanıcıları önemli olaylar hakkında bilgilendirir.
+   - **Description:** Notifies users about important events such as new comments, likes, or follows.
+
+6. **Çoklu Dil Desteği (Multilanguage Support)**
+   - **Açıklama:** Uygulamanızın birden fazla dilde kullanılabilmesini sağlar.
+   - **Description:** Allows the application to be used in multiple languages for a wider audience.
+
+7. **Offline Desteği (Offline Support)**
+   - **Açıklama:** Kullanıcıların internet bağlantısı olmadığında bile uygulamayı kullanabilmelerini sağlar.
+   - **Description:** Enables users to access and interact with the app even without an internet connection.
+
+8. **Performans İyileştirmeleri (Performance Enhancements)**
+   - **Açıklama:** Uygulamanızın hızını ve verimliliğini artırır.
+   - **Description:** Improves the speed and efficiency of the application for a better user experience.
+
+9. **Mobil Push Bildirimleri (Mobile Push Notifications)**
+   - **Açıklama:** Kullanıcıları uygulama içi güncellemeler hakkında bilgilendirir.
+   - **Description:** Informs users about in-app updates and activities through push notifications on mobile devices.
+
+10. **Web Push Bildirimleri (Web Push Notifications)**
+    - **Açıklama:** Web kullanıcılarını uygulama içi güncellemeler hakkında bilgilendirir.
+    - **Description:** Notifies web users about in-app updates and activities through web push notifications.
+
+---
+
+### **Future Features**
+
+1. **Comment System**
+   - **Description:** Allows users to comment on posts and interact with each other.
+
+2. **Like and Share**
+   - **Description:** Encourages users to like posts and share them on social media platforms.
+
+3. **Categories and Tags**
+   - **Description:** Facilitates organizing posts by categories and tags for easier navigation.
+
+4. **Search and Filtering**
+   - **Description:** Enables users to easily find desired content through search and filtering options.
+
+5. **Notifications**
+   - **Description:** Notifies users about important events such as new comments, likes, or follows.
+
+6. **Multilanguage Support**
+   - **Description:** Allows the application to be used in multiple languages for a wider audience.
+
+7. **Offline Support**
+   - **Description:** Enables users to access and interact with the app even without an internet connection.
+
+8. **Performance Enhancements**
+   - **Description:** Improves the speed and efficiency of the application for a better user experience.
+
+9. **Mobile Push Notifications**
+   - **Description:** Informs users about in-app updates and activities through push notifications on mobile devices.
+
+10. **Web Push Notifications**
+    - **Description:** Notifies web users about in-app updates and activities through web push notifications.
+
+
+
+
 ## SS FOR WEB
 
 <img width="1434" alt="Ekran Resmi 2024-10-13 01 14 39" src="https://github.com/user-attachments/assets/4319ccbb-f71d-47ac-a32f-2f746b426e38">
