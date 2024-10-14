@@ -29,12 +29,11 @@ samples, guidance on mobile development, and a full API reference.
 
 ## SS FOR MOBILE
 
-<img width="400" height="1000" alt="Ekran Resmi 2024-10-13 01 14 39" src="https://github.com/user-attachments/assets/6a68aed6-6bc2-4882-84c8-1fa9962a8543">
+<p float="left">
+ <img width="400" height="1000" alt="Ekran Resmi 2024-10-13 01 14 39" src="https://github.com/user-attachments/assets/6a68aed6-6bc2-4882-84c8-1fa9962a8543">
+  <img width="400" height="1000" alt="Ekran Resmi 2024-10-13 01 14 39" src="https://github.com/user-attachments/assets/571cfdfe-f48a-43b1-adb2-a0a30d0c91b3">
+ <img width="400" height="1000" alt="Ekran Resmi 2024-10-13 01 14 39" src="https://github.com/user-attachments/assets/b5340afa-e0c9-4ff4-8d48-b5daeeb877c8">
+   <img width="400" height="1000" alt="Ekran Resmi 2024-10-13 01 14 39" src="https://github.com/user-attachments/assets/08837ac8-f6ba-476e-9e1c-aea420607671">
+</p>
 
-![Simulator Screenshot - iPhone 15 Pro - 2024-10-14 at 18 22 35](https://github.com/user-attachments/assets/6a68aed6-6bc2-4882-84c8-1fa9962a8543)
 
-![Simulator Screenshot - iPhone 15 Pro - 2024-10-14 at 18 22 43](https://github.com/user-attachments/assets/571cfdfe-f48a-43b1-adb2-a0a30d0c91b3)
-
-![Simulator Screenshot - iPhone 15 Pro - 2024-10-14 at 18 22 50](https://github.com/user-attachments/assets/b5340afa-e0c9-4ff4-8d48-b5daeeb877c8)
-
-![Simulator Screenshot - iPhone 15 Pro - 2024-10-14 at 18 22 57](https://github.com/user-attachments/assets/08837ac8-f6ba-476e-9e1c-aea420607671)
