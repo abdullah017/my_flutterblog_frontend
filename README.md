@@ -117,39 +117,7 @@ samples, guidance on mobile development, and a full API reference.
     - **Açıklama:** Web kullanıcılarını uygulama içi güncellemeler hakkında bilgilendirir.
     - **Description:** Notifies web users about in-app updates and activities through web push notifications.
 
----
 
-### **Future Features**
-
-1. **Comment System**
-   - **Description:** Allows users to comment on posts and interact with each other.
-
-2. **Like and Share**
-   - **Description:** Encourages users to like posts and share them on social media platforms.
-
-3. **Categories and Tags**
-   - **Description:** Facilitates organizing posts by categories and tags for easier navigation.
-
-4. **Search and Filtering**
-   - **Description:** Enables users to easily find desired content through search and filtering options.
-
-5. **Notifications**
-   - **Description:** Notifies users about important events such as new comments, likes, or follows.
-
-6. **Multilanguage Support**
-   - **Description:** Allows the application to be used in multiple languages for a wider audience.
-
-7. **Offline Support**
-   - **Description:** Enables users to access and interact with the app even without an internet connection.
-
-8. **Performance Enhancements**
-   - **Description:** Improves the speed and efficiency of the application for a better user experience.
-
-9. **Mobile Push Notifications**
-   - **Description:** Informs users about in-app updates and activities through push notifications on mobile devices.
-
-10. **Web Push Notifications**
-    - **Description:** Notifies web users about in-app updates and activities through web push notifications.
 
 
 
