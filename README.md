@@ -48,7 +48,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ### **Future Features**
 
-| **Feature**                   | **Description (English)**                                               |
+| **Feature**                   | **Description**                                               |
 |-------------------------------|------------------------------------------------------------------------|
 | **Comment System**            | Allows users to comment on posts and interact with each other.         |
 | **Like and Share**            | Encourages users to like posts and share them on social media platforms. |
