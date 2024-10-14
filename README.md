@@ -1,4 +1,4 @@
-# my_blogapp_frontend
+# my_flutterblog_frontend
 
 A Flutter Blog App for abdullahtas.dev
 
