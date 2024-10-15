@@ -33,7 +33,7 @@ class AppThemes {
       filled: true,
       fillColor: Colors.grey[200],
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(30.0),
+        borderRadius: BorderRadius.circular(30.0),  
         borderSide: BorderSide.none,
       ),
       hintStyle: const TextStyle(color: Colors.grey),
