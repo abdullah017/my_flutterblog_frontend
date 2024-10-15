@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:my_blogapp_frontend/core/constant/constant.dart';
 import 'package:my_blogapp_frontend/presentation/controllers/post_controller/post_controller.dart';
 import 'package:my_blogapp_frontend/presentation/controllers/theme_controller/theme_controller.dart';
@@ -18,14 +19,21 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     // Temaya göre uygun renkleri bulma
     final theme = Theme.of(context);
-    final isDarkMode = theme.brightness == Brightness.dark;
+    final bool isDarkMode = themeController.isDarkMode;
+
+    // Responsive tasarım için ekran genişliğini alıyoruz
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final bool isMobile = screenWidth < 600;
 
     return Scaffold(
       backgroundColor: theme.scaffoldBackgroundColor,
       appBar: HomePageHeaderWidget(
-          theme: theme,
-          isDarkMode: isDarkMode,
-          themeController: themeController),
+        theme: theme,
+        isDarkMode: isDarkMode,
+        themeController: themeController,
+        isMobile: isMobile,
+      ),
+      drawer: isMobile ? _buildDrawer(theme, isDarkMode) : null,
       body: CustomScrollView(
         slivers: [
           // Başlık Bölümü
@@ -37,6 +45,101 @@ class HomePage extends StatelessWidget {
           // Yazı Listesi
           articleList(theme, context),
           // Alt Boşluk (Opsiyonel)
+        ],
+      ),
+    );
+  }
+
+  // Drawer menüsünü Scaffold içinde oluşturma
+  Widget _buildDrawer(ThemeData theme, bool isDarkMode) {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          DrawerHeader(
+            decoration: BoxDecoration(
+              color: theme.colorScheme.primary,
+            ),
+            child: Text(
+              appTitle,
+              style: GoogleFonts.openSans(
+                textStyle: const TextStyle(
+                  fontSize: 24,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+          ListTile(
+            leading: Icon(Icons.home, color: theme.iconTheme.color),
+            title: Text(
+              home,
+              style: GoogleFonts.openSans(
+                textStyle: TextStyle(
+                  fontSize: 16,
+                  color: theme.textTheme.bodyMedium?.color,
+                ),
+              ),
+            ),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: Icon(Icons.article, color: theme.iconTheme.color),
+            title: Text(
+              blog,
+              style: GoogleFonts.openSans(
+                textStyle: TextStyle(
+                  fontSize: 16,
+                  color: theme.textTheme.bodyMedium?.color,
+                ),
+              ),
+            ),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: Icon(Icons.contact_mail, color: theme.iconTheme.color),
+            title: Text(
+              contact,
+              style: GoogleFonts.openSans(
+                textStyle: TextStyle(
+                  fontSize: 16,
+                  color: theme.textTheme.bodyMedium?.color,
+                ),
+              ),
+            ),
+            onTap: () {},
+          ),
+          const Divider(),
+          ListTile(
+              leading: Icon(
+                isDarkMode ? Icons.dark_mode : Icons.light_mode,
+                color: theme.iconTheme.color,
+              ),
+              title: Text(
+                'Tema Değiştir',
+                style: GoogleFonts.openSans(
+                  textStyle: TextStyle(
+                    fontSize: 16,
+                    color: theme.textTheme.bodyMedium?.color,
+                  ),
+                ),
+              ),
+              trailing: Switch(
+                value: themeController.isDarkMode,
+                onChanged: (value) {
+                  themeController.switchTheme();
+                },
+                activeColor: theme.colorScheme.primary,
+                inactiveThumbColor: Colors.grey,
+                thumbIcon: WidgetStateProperty.resolveWith<Icon?>(
+                  (Set<WidgetState> states) {
+                    if (states.contains(WidgetState.selected)) {
+                      return const Icon(Icons.dark_mode, color: Colors.white);
+                    }
+                    return const Icon(Icons.light_mode, color: Colors.white);
+                  },
+                ),
+              )),
         ],
       ),
     );

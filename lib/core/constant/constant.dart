@@ -26,5 +26,6 @@ const String githubAppLink = 'https://github.com/abdullah017';
 const String twitterAppLink = 'https://x.com/0abdullahtas';
 const String instagramAppLink = 'https://www.instagram.com/0abdullahtas/';
 
-
-
+const String home = 'Ana Sayfa';
+const String blog = 'Blog';
+const String contact = 'İletişim';
