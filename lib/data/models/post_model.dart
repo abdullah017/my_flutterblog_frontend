@@ -1,5 +1,7 @@
 import 'package:my_blogapp_frontend/domain/entities/post_entites.dart';
 
+/// The `PostModel` class extends `Post` and includes a constructor and a factory method for creating
+/// instances from JSON data.
 class PostModel extends Post {
   const PostModel({
     required super.id,

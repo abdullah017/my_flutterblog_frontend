@@ -38,7 +38,7 @@ class AppThemes {
       ),
       hintStyle: const TextStyle(color: Colors.grey),
     ),
-    // Diğer tema özelliklerini buraya ekleyebilirsiniz
+
   );
 
   // Dark Theme (Koyu Tema)
@@ -77,6 +77,5 @@ class AppThemes {
       ),
       hintStyle: const TextStyle(color: Colors.grey),
     ),
-    // Diğer tema özelliklerini buraya ekleyebilirsiniz
   );
 }

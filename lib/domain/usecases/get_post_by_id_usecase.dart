@@ -9,6 +9,17 @@ class GetPostById {
 
   GetPostById(this.repository);
 
+/// This function returns a Future that either contains a Failure or a Post object based on the id
+/// provided.
+/// 
+/// Args:
+///   id (int): The `id` parameter in the `call` method is an integer value that represents the unique
+/// identifier of the post that you want to retrieve from the repository.
+/// 
+/// Returns:
+///   The `call` method is returning a `Future` that resolves to an `Either` type. The `Either` type can
+/// hold either a `Failure` object or a `Post` object. The method is asynchronous and it awaits the
+/// result of calling `repository.getPostById(id)`.
   Future<Either<Failure, Post?>> call(int id) async {
     return await repository.getPostById(id);
   }

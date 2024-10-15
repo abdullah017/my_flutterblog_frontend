@@ -4,8 +4,8 @@ import 'package:ionicons/ionicons.dart';
 import 'package:my_blogapp_frontend/core/constant/constant.dart';
 import 'package:my_blogapp_frontend/presentation/controllers/theme_controller/theme_controller.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
-//import 'dart:html' as html; import 'dart:js' as js;
+
+// TO DO
 
 class HomePageHeaderWidget extends StatelessWidget
     implements PreferredSizeWidget {
@@ -52,35 +52,46 @@ class HomePageHeaderWidget extends StatelessWidget
           color: theme.iconTheme.color,
         ),
         IconButton(
-          onPressed: () {
-            //canLaunchUrlString(githubLink);
-            // kIsWeb
-            //     ? js.context.callMethod('open',
-            //         [githubLink]) //html.window.open(githubLink, 'new tab')
-            //     : canLaunchUrlString(githubLink);
+          onPressed: () async {
+            if (await canLaunchUrl(Uri.parse(githubAppLink))) {
+              await launchUrl(Uri.parse(githubAppLink),
+                  mode: LaunchMode.externalApplication);
+            } else if (await canLaunchUrl(Uri.parse(githubWebLink))) {
+              await launchUrl(Uri.parse(githubWebLink),
+                  mode: LaunchMode.externalApplication);
+            } else {
+              Get.snackbar('Hata', 'Github bağlantısı açılamadı.');
+            }
           },
           icon: const Icon(Ionicons.logo_github),
           color: theme.iconTheme.color,
         ),
         IconButton(
-          onPressed: () {
-            // canLaunchUrlString(twitterLink);
-            // kIsWeb
-            //     ? js.context.callMethod('open',
-            //         [twitterLink]) //html.window.open(twitterLink, 'new tab')
-            //     : canLaunchUrlString(twitterLink);
+          onPressed: () async {
+            if (await canLaunchUrl(Uri.parse(twitterAppLink))) {
+              await launchUrl(Uri.parse(twitterAppLink),
+                  mode: LaunchMode.externalApplication);
+            } else if (await canLaunchUrl(Uri.parse(twitterWebLink))) {
+              await launchUrl(Uri.parse(twitterWebLink),
+                  mode: LaunchMode.externalApplication);
+            } else {
+              Get.snackbar('Hata', 'X bağlantısı açılamadı.');
+            }
           },
           icon: const Icon(Ionicons.logo_twitter),
           color: theme.iconTheme.color,
         ),
         IconButton(
-          onPressed: () {
-            //  canLaunchUrlString(instagramLink);
-            // kIsWeb
-            //     ? js.context.callMethod('open', [
-            //         instagramLink
-            //       ]) //html.window.open(instagramLink, 'new tab')
-            //     : canLaunchUrlString(instagramLink);
+          onPressed: () async {
+            if (await canLaunchUrl(Uri.parse(instagramAppLink))) {
+              await launchUrl(Uri.parse(instagramAppLink),
+                  mode: LaunchMode.externalApplication);
+            } else if (await canLaunchUrl(Uri.parse(instagramWebLink))) {
+              await launchUrl(Uri.parse(instagramWebLink),
+                  mode: LaunchMode.externalApplication);
+            } else {
+              Get.snackbar('Hata', 'İnstagram bağlantısı açılamadı.');
+            }
           },
           icon: const Icon(Ionicons.logo_instagram),
           color: theme.iconTheme.color,

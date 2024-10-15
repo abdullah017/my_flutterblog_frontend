@@ -15,6 +15,8 @@ class PostController extends GetxController {
     required this.getPostById,
   });
 
+/// These lines of code are defining reactive variables using GetX library in Dart. Here's what each
+/// variable is doing:
   // All posts fetched from the backend
   var allPosts = <Post>[].obs;
 
@@ -40,6 +42,8 @@ class PostController extends GetxController {
     //     time: const Duration(milliseconds: 300));
   }
 
+/// The `fetchPosts` function fetches posts asynchronously, updates state based on the result, and
+/// handles potential errors.
   Future<void> fetchPosts() async {
     isLoading.value = true;
     final Either<Failure, List<Post>> result = await getPosts.call();
@@ -54,6 +58,11 @@ class PostController extends GetxController {
     isLoading.value = false;
   }
 
+/// The function `filterPosts` filters a list of posts based on a search term provided by the user.
+/// 
+/// Returns:
+///   The `filterPosts()` function returns a list of posts that contain the search term in their title.
+/// If the search term is empty, it returns all posts.
   void filterPosts() {
     if (searchTerm.value.isEmpty) {
       filteredPosts.value = allPosts;
@@ -65,6 +74,13 @@ class PostController extends GetxController {
     }
   }
 
+/// This function fetches a post by its ID, updates the UI with the fetched post or error message, and
+/// manages a loading state.
+/// 
+/// Args:
+///   id (int): The `id` parameter in the `fetchPostById` function represents the unique identifier of
+/// the post that you want to fetch. This function is responsible for fetching a post by its ID
+/// asynchronously.
   Future<void> fetchPostById(int id) async {
     isLoading.value = true;
     final Either<Failure, Post?> result = await getPostById.call(id);
