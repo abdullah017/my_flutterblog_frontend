@@ -13,6 +13,10 @@ class PostRemoteDataSourceImpl implements PostRemoteDataSource {
 
   PostRemoteDataSourceImpl({required this.client});
 
+/// This function retrieves a list of posts from a server and maps them to a list of PostModel objects.
+/// 
+/// Returns:
+///   A Future that resolves to a List of PostModel objects.
   @override
   Future<List<PostModel>> getPosts() async {
     final QueryOptions options = QueryOptions(
@@ -29,6 +33,16 @@ class PostRemoteDataSourceImpl implements PostRemoteDataSource {
     return postsJson.map((json) => PostModel.fromJson(json)).toList();
   }
 
+/// This Dart function retrieves a post by its ID using GraphQL and returns a PostModel object.
+/// 
+/// Args:
+///   id (int): The `getPostById` method you provided is used to fetch a post by its ID from a GraphQL
+/// server. The `id` parameter is the unique identifier of the post you want to retrieve. This method
+/// sends a query to the server with the specified ID and returns the corresponding `PostModel` object
+/// 
+/// Returns:
+///   The `getPostById` method is returning a `Future` that resolves to a `PostModel` object or `null`
+/// if the `postJson` is null.
   @override
   Future<PostModel?> getPostById(int id) async {
     final QueryOptions options = QueryOptions(

@@ -36,8 +36,9 @@ class _PostCardState extends State<PostCard> {
       onTap: () {
         final String slugifiedTitle =
             RouteSlugHelper().slugify(widget.post.title);
-        Get.toNamed('${Routes.post_detail}/$slugifiedTitle-${widget.post.id}',
-           );
+        Get.toNamed(
+          '${Routes.post_detail}/$slugifiedTitle-${widget.post.id}',
+        );
       },
       child: MouseRegion(
         onEnter: (_) {
@@ -86,7 +87,6 @@ class _PostCardState extends State<PostCard> {
                         child: const Center(child: CircularProgressIndicator()),
                       ),
                       errorWidget: (context, url, error) {
-                        print('CachedNetworkImage error: $error');
                         return Container(
                           height: 150,
                           color: Theme.of(context).colorScheme.surface,
@@ -101,16 +101,10 @@ class _PostCardState extends State<PostCard> {
                   )
                 else
                   // Varsayılan bir kapak resmi göster
-                  ClipRRect(
-                    borderRadius:
-                        const BorderRadius.vertical(top: Radius.circular(15)),
-                    child: Image.asset(
-                      'assets/images/default_cover.png', // Projenize uygun varsayılan resim ekleyin
-                      height: 150,
-                      width: double.infinity,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                  const ClipRRect(
+                      borderRadius:
+                          BorderRadius.vertical(top: Radius.circular(15)),
+                      child: FlutterLogo()),
                 Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: Column(
