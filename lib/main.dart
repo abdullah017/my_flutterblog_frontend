@@ -7,6 +7,7 @@ import 'package:my_blogapp_frontend/core/theme/theme.dart';
 import 'package:my_blogapp_frontend/presentation/controllers/theme_controller/theme_controller.dart';
 import 'package:my_blogapp_frontend/presentation/pages/unkown/unkown_page.dart';
 import 'package:my_blogapp_frontend/routes/app_pages.dart';
+import 'core/constant/constant.dart';
 import 'injection_container.dart' as di;
 
 void main() async {
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
       child: CacheProvider(
         child: GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'abdullahtas.dev',
+          title: appTitle,
           theme: AppThemes.lightTheme,
           darkTheme: AppThemes.darkTheme,
           themeMode:

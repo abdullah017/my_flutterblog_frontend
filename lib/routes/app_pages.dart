@@ -21,11 +21,5 @@ class AppPages {
       ),
     ),
 
-    // GetPage(
-    //   name: '${Routes.post_detail}/:postId', // Define a dynamic parameter
-    //   page: () => PostDetailPage(
-    //       postId: int.parse(
-    //           Get.parameters['postId']!)), // Get the postId from parameters
-    // ),
   ];
 }
