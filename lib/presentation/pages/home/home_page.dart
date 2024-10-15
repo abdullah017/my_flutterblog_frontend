@@ -1,4 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
@@ -310,7 +311,9 @@ class HomePage extends StatelessWidget {
         }
 
         return SliverPadding(
-          padding: const EdgeInsets.only(top: 20.0),
+          padding: kIsWeb
+              ? const EdgeInsets.symmetric(horizontal: 150.0)
+              : const EdgeInsets.symmetric(horizontal: 20.0),
           sliver: SliverStaggeredGrid.countBuilder(
             crossAxisCount: crossAxisCount,
             mainAxisSpacing: 20,
