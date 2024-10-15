@@ -2,6 +2,8 @@ const String graphqlEndpoint = 'https://vortexsura.softvortex.com/v1/graphql';
 const String hasuraAdminSecret = 'myadminsecretkey';
 const String webSocketLink = 'wss://vortexsura.softvortex.com/v1/graphql';
 
+const String appTitle = 'abdullahtas.dev';
+
 const String darkLogo = 'assets/abdullahtas_dark.png';
 const String lightLogo = 'assets/abdullahtas_LOGO.png';
 
