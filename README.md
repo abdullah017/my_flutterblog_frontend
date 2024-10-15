@@ -22,30 +22,22 @@ samples, guidance on mobile development, and a full API reference.
 
 ###  Used Packages
 
-| **Package**                           | **Description**                                                                                                 |
-|---------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| `get: ^4.6.5`                          | A comprehensive solution for state management, dependency injection, and route management in Flutter apps.    |
-| `get_storage`                          | A simple key-value storage solution provided by GetX.                                                          |
-| `graphql_flutter: ^5.1.2`              | A GraphQL client for Flutter, enabling interaction with GraphQL APIs.                                         |
-| `flutter_quill`                        | A rich text editor and text formatting library for Flutter.                                                    |
-| `image_picker`                         | A plugin for selecting images from the gallery or camera in Flutter applications.                              |
-| `fl_chart`                             | A charting library for creating various types of charts in Flutter.                                           |
-| `another_flushbar`                     | A customizable flushbar notification package for Flutter.                                                      |
-| `flutter_screenutil`                   | A Flutter plugin for adapting screen and font sizes to different screen dimensions.                            |
-| `dartz`                                | Provides functional programming tools for Dart.                                                                |
-| `flutter_dotenv: ^5.1.0`               | Loads environment variables from a `.env` file into Dart's environment variables.                               |
-| `cached_network_image: ^3.4.1`         | A library for loading and caching network images in Flutter.                                                   |
-| `flutter_html`                         | A package to render HTML content in Flutter applications.                                                      |
-| `equatable`                            | Simplifies value equality in Dart objects.                                                                       |
-| `webview_flutter`                      | Embeds web content into Flutter applications using a native WebView.                                           |
-| `url_launcher`                         | A plugin for launching URLs in the browser or other applications.                                              |
-| `flutter_linkify`                      | Converts URLs in text to clickable links in Flutter.                                                            |
-| `flutter_staggered_grid_view: ^0.4.0`  | A package providing staggered grid views for Flutter.                                                          |
-| `google_fonts`                         | Allows easy use of Google Fonts in Flutter applications.                                                        |
-| `intl: ^0.19.0`                        | Provides internationalization and localization facilities, including date and number formatting.               |
-| `ionicons: ^0.2.2`                      | A package providing Ionicons icon set for Flutter.                                                              |
-| `animated_text_kit: ^4.2.2`             | A collection of animated text widgets for Flutter.                                                               |
-
+| **Kategori (Category)**                   | **Paket (Package)**              | **Versiyon (Version)** | **Açıklama (Description)**                                                                                                 |
+|------------------------------------------|----------------------------------|------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| **State Management**                     | `get`                            | ^4.6.5                 | A comprehensive solution for state management, dependency injection, and route management in Flutter apps.                |
+| **Local Storage**                        | `get_storage`                    |                        | A simple key-value storage solution provided by GetX.                                                                       |
+| **GraphQL**                              | `graphql_flutter`                | ^5.1.2                 | A GraphQL client for Flutter, enabling interaction with GraphQL APIs.                                                      |
+| **Functional Programming Tools**         | `dartz`                          |                        | Provides functional programming tools for Dart.                                                                              |
+| **Environment Variables Loader**         | `flutter_dotenv`                 | ^5.1.0                 | Loads environment variables from a `.env` file into Dart's environment variables.                                            |
+| **Network Image Caching**                | `cached_network_image`           | ^3.4.1                 | A library for loading and caching network images in Flutter.                                                                  |
+| **Value Equality**                       | `equatable`                      |                        | Simplifies value equality in Dart objects.                                                                                    |
+| **URL Launcher**                         | `url_launcher`                   |                        | A plugin for launching URLs in the browser or other applications.                                                             |
+| **Linkify**                              | `flutter_linkify`                |                        | Converts URLs in text to clickable links in Flutter.                                                                           |
+| **Staggered Grid View**                  | `flutter_staggered_grid_view`    | ^0.4.0                 | A package providing staggered grid views for Flutter.                                                                          |
+| **Google Fonts**                         | `google_fonts`                   |                        | Allows easy use of Google Fonts in Flutter applications.                                                                       |
+| **Internationalization**                 | `intl`                           | ^0.19.0                | Provides internationalization and localization facilities, including date and number formatting.                              |
+| **Ionicons**                             | `ionicons`                       | ^0.2.2                 | A package providing Ionicons icon set for Flutter.                                                                             |
+| **Animated Text**                        | `animated_text_kit`              | ^4.2.2                 | A collection of animated text widgets for Flutter.                                                                             |
 
 
 
