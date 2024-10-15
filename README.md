@@ -61,7 +61,7 @@ samples, guidance on mobile development, and a full API reference.
 
 
 
-## SS FOR WEB
+## SS FOR WEB - NOTE: OLD VERSION IMAGES
 
 <img width="1434" alt="Ekran Resmi 2024-10-13 01 14 39" src="https://github.com/user-attachments/assets/4319ccbb-f71d-47ac-a32f-2f746b426e38">
 
@@ -72,7 +72,7 @@ samples, guidance on mobile development, and a full API reference.
 <img width="1434" alt="Ekran Resmi 2024-10-13 01 15 15" src="https://github.com/user-attachments/assets/46735757-2530-4da8-a0b4-720d1043e4f3">
 
 
-## SS FOR MOBILE
+## SS FOR MOBILE - NOTE: OLD VERSION IMAGES
 
 <p float="left">
  <img width="400" height="1000" alt="Ekran Resmi 2024-10-13 01 14 39" src="https://github.com/user-attachments/assets/6a68aed6-6bc2-4882-84c8-1fa9962a8543">
